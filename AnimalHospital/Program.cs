@@ -36,7 +36,7 @@ namespace AnimalHospital
             } 
             else if(k == '3')
             {
-                Console.WriteLine("Not yet implemented!");
+                listPatients();
             }
             else if (k == '4')
             {
@@ -71,6 +71,15 @@ namespace AnimalHospital
             }
 
             new Patient(name, age).AdmitTo(hospital);
+        }
+
+        static void listPatients()
+        {
+            Console.WriteLine("NAME, AGE\n----------");
+            for (int i = 0; i < hospital.patients.Count; i++)
+            {
+                Console.WriteLine($"{hospital.patients[i].name}, {hospital.patients[i].age}");
+            }
         }
 
         static Hospital InitializeHospital()
