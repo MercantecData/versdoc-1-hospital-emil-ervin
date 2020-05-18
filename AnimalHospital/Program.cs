@@ -44,7 +44,7 @@ namespace AnimalHospital
             }
             else if (k == '5')
             {
-                Console.WriteLine("Not yet implemented!");
+                AssignDoctorToPatient();
             }
             else if (k == '0')
             {
@@ -71,6 +71,40 @@ namespace AnimalHospital
             }
 
             new Patient(name, age).AdmitTo(hospital);
+        }
+
+        static void AssignDoctorToPatient()
+        {
+            Console.WriteLine("What is the doctors name?");
+            string doctorName = Console.ReadLine();
+
+            int doctorIndex = hospital.doctors.FindIndex(a => a.name == doctorName);
+
+            while(doctorIndex == -1)
+            {
+                Console.WriteLine("Doctor does not exist, try again");
+                Console.WriteLine("What is the doctors name?");
+                doctorName = Console.ReadLine();
+                doctorIndex = hospital.doctors.FindIndex(a => a.name == doctorName);
+            }
+
+            Console.WriteLine("What is the patients name?");
+            string name = Console.ReadLine();
+
+            Patient person = hospital.FindPatientByName(name);
+
+            while (person == null)
+            {
+                Console.WriteLine("Patient does not exist, try again");
+
+                Console.WriteLine("What is the patients name?");
+                name = Console.ReadLine();
+
+                person = hospital.FindPatientByName(name);
+            }
+
+            hospital.doctors[doctorIndex].assignedPatients.Add(person);
+            Console.WriteLine($"Doctor ({hospital.doctors[doctorIndex].name}) was successfully asigned to the patient {person.name}");
         }
 
         static Hospital InitializeHospital()
