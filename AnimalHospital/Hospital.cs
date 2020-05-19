@@ -35,6 +35,7 @@ namespace AnimalHospital
                 Console.WriteLine("Patient not in this hospital");
             } else
             {
+                Console.WriteLine($"{patient.name} was in successfully discharged from the {name}");
                 patients.Remove(patient);
             }
         }
@@ -51,5 +52,6 @@ namespace AnimalHospital
 
             return null;
         }
+
     }
 }
