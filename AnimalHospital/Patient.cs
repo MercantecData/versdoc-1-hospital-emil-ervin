@@ -10,12 +10,14 @@ namespace AnimalHospital
         public int age;
         public Doctor doctor;
 
+        // Constructor to give patient name and age
         public Patient(string name, int age)
         {
             this.name = name;
             this.age = age;
         }
 
+        // Gets hospital
         public void AdmitTo(Hospital hospital)
         {
             hospital.AdmitPatient(this);
