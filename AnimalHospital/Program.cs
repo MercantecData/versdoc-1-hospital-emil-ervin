@@ -32,7 +32,6 @@ namespace AnimalHospital
             } 
             else if(k == '2')
             {
-                Console.WriteLine("Not yet implemented!");
                 DischargePatient();
             } 
             else if(k == '3')
