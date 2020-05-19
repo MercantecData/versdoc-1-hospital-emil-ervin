@@ -10,6 +10,7 @@ namespace AnimalHospital
         public string speciality;
         public List<Patient> assignedPatients = new List<Patient>();
 
+        // Constructor to give the doctors name and speciality
         public Doctor(string name, string speciality)
         {
             this.name = name;
