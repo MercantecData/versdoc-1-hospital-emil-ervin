@@ -83,7 +83,6 @@ namespace AnimalHospital
             Patient person = hospital.FindPatientByName(name);
 
             hospital.DischargePatient(person);
-
         }
 
         static void listPatients()
